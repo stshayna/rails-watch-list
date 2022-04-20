@@ -1,0 +1,7 @@
+<h1>Add a new list</h1>
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name, placeholder: 'E.g. Sci-Fi' %>
+  <%= f.submit %>
+<% end %>
+<p></p>
+<%= link_to 'Back', lists_path, class: 'btn btn-primary' %>

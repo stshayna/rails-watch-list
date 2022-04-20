@@ -1,0 +1,4 @@
+<h1>All Lists (<%= List.count %>)</h1>
+<% @lists.each do |list| %>
+  <%= list.id %><%= list.name %>
+<% end %>
