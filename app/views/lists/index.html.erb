@@ -1,4 +1,6 @@
 <h1>All Lists (<%= List.count %>)</h1>
+<%= link_to "Add a new list", new_list_path %>
+<p></p>
 <% @lists.each do |list| %>
-  <%= list.id %><%= list.name %>
+  <p><%= list.id %>. <%= link_to list.name, list_path(list) %></p>
 <% end %>

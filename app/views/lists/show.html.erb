@@ -1,2 +1,7 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<h1>List: <%= @list.name %></h1>
+<% @list.bookmarks.each_with_index do |b, i| %>
+  <p><%= i + 1 %>. <%= b.movie.title %> (Comment: <%= b.comment %>)</p>
+  <p><%= link_to "Delete this bookmark", bookmark_path(b), method: :delete, data: { confirm: "Delete bookmark?" } %></p>
+<% end %>
+<p><%= link_to "Back", lists_path %></p>
+<p><%= link_to "Add a bookmark", new_list_bookmark_path(@list) %></p>
