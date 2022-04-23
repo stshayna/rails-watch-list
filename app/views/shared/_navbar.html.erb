@@ -1,0 +1,10 @@
+<div class="navbar spx-3 navbar-light">
+  <%= link_to image_tag("popcorn.jpeg", alt: "popcorn", class: "logo"), lists_path %>
+
+  <div class="navbar-collapse">
+    <ul class="navbar-nav me-auto">
+      <li><%= link_to "My Lists", lists_path, class: "nav-link" %></li>
+      <li><%= link_to "Add a new list", new_list_path, class: "nav-link" %></li>
+    </ul>
+  </div>
+</div>

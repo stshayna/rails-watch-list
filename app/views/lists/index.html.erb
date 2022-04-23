@@ -1,6 +1,9 @@
-<h1>All Lists (<%= List.count %>)</h1>
-<%= link_to "Add a new list", new_list_path %>
-<p></p>
+<div class="cover align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1>Save any kind of movies</h1>
+  </div>
+</div>
+
 <% @lists.each do |list| %>
   <p><%= list.id %>. <%= link_to list.name, list_path(list) %></p>
 <% end %>
