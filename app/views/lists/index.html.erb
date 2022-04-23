@@ -4,6 +4,6 @@
   </div>
 </div>
 
-<% @lists.each do |list| %>
-  <p><%= list.id %>. <%= link_to list.name, list_path(list) %></p>
+<% @lists.each_with_index do |list, i| %>
+  <p><%= i + 1 %>. <%= link_to list.name, list_path(list) %></p>
 <% end %>
