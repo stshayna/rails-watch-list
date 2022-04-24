@@ -7,10 +7,3 @@
 <% @lists.each_with_index do |list, i| %>
   <p><%= i + 1 %>. <%= link_to list.name, list_path(list) %></p>
 <% end %>
-
-<%= cl_image_tag("https://res.cloudinary.com/dlbsxqc0a/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1650741797/bwl07gi1lwereagyvkdm.jpg",
-      width: 400, height: 300, crop: :fill) %>
-
-<!-- for face detection -->
-<%= cl_image_tag("https://res.cloudinary.com/dlbsxqc0a/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1650741798/kxn9v0g88ioqrfq80gmu.jpg",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>

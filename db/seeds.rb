@@ -11,10 +11,10 @@ require 'json'
 
 Movie.destroy_all
 
-url = URI.open('https://tmdb.lewagon.com/movie/top_rated').read
+url = URI.open('https://api.themoviedb.org/3/movie/top_rated?api_key=62b6e0ed1087e3484dcde39271cc80d5&language=en-US&page=1').read
 doc = JSON.parse(url)
 
-doc['results'][0..11].each do |hash|
+doc['results'][0..19].each do |hash|
   Movie.create!(
     title: hash['original_title'],
     overview: hash['overview'],

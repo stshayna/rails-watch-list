@@ -1,6 +1,7 @@
 <h1>List: <%= @list.name %></h1>
 <% @list.bookmarks.each_with_index do |b, i| %>
   <p><%= i + 1 %>. <%= b.movie.title %> (Comment: <%= b.comment %>)</p>
+  <%= image_tag b.movie.poster_url, alt: b.movie.title, class: "movie-img rounded-top" %>
   <p><%= link_to "Delete this bookmark", bookmark_path(b), method: :delete, data: { confirm: "Delete bookmark?" } %></p>
 <% end %>
 <p><%= link_to "Back", lists_path %></p>
