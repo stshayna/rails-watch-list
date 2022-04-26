@@ -1,7 +1,11 @@
-<h1>Add a new list</h1>
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name, placeholder: 'E.g. Sci-Fi' %>
-  <%= f.submit %>
-<% end %>
-<p></p>
-<%= link_to 'Back', lists_path, class: 'btn btn-primary' %>
+<div class="container p-5 m-5">
+  <div class="bg-white rounded shadow p-3">
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :name, placeholder: 'E.g. Drama' %>
+      <%= f.input :photo %>
+      <%= f.submit 'Create a new list', class: 'btn btn-outline-dark' %>
+    <% end %>
+  </div>
+  <p></p>
+  <%= link_to 'Back', lists_path, class: 'btn btn-secondary btn-sm' %>
+</div>

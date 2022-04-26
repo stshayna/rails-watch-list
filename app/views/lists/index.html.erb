@@ -1,9 +1,23 @@
-<div class="cover align-items-center justify-content-center">
+<div class="cover box-shadow d-flex align-items-center justify-content-center">
   <div class="text-center text-white">
-    <h1>Save any kind of movies</h1>
+    <h1>Bookmark my kind of movies</h1>
+    <p></p>
+    <h4 class="typed-js" data-controller="typed-js"></h4>
   </div>
 </div>
 
-<% @lists.each_with_index do |list, i| %>
-  <p><%= i + 1 %>. <%= link_to list.name, list_path(list) %></p>
-<% end %>
+<div class="container py-5">
+  <h4 class="mb-3">My Lists</h4>
+
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-12 col-sm-6 col-md-4">
+        <%= link_to list_path(list), class: "text-decoration-none" do %>
+          <div class="cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.photo.key %>)">
+            <span class="border-bottom border-top border-white px-1"><%= list.name %></span>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

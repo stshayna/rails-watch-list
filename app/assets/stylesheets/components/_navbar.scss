@@ -1,13 +1,29 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  background: transparent;
+  transition: 0.8s background-color ease;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+
+  .fa-solid {
+    color: $nav-red;
+    font-size: 24px;
+  }
+
+  .nav-link {
+    color: $nav-red;
+    font-size: smaller;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.navbar-white {
   background: white;
-}
-
-.navbar .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar img {
-  width: 40px;
 }
