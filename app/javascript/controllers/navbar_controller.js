@@ -6,6 +6,6 @@ export default class extends Controller {
       this.element.classList.add("navbar-white")
     } else {
       this.element.classList.remove("navbar-white")
-    }
-  };
+    };
+  }
 }

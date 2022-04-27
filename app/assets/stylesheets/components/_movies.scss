@@ -1,5 +1,8 @@
 .movie-img {
   width: 100%;
   height: 240px;
-  object-fit: cover;
+  object-fit: scale-down;
+}
+.fa-star {
+  color: $nav-red;
 }

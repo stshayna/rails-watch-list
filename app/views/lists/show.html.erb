@@ -1,3 +1,4 @@
+
 <div>
   <div class="cards list-bg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@list.photo.key) %>)">
     <h1 class="text-lowercase"><%= @list.name %></h1>
@@ -5,28 +6,33 @@
 </div>
 
 <div class="container">
-  <div class="d-flex justify-content-between my-4">
+  <div class="d-flex justify-content-between my-5">
     <p class="text-secondary"><%= "You haven't saved any movies yet 🤨" if @list.movies.empty? %></p>
     <div>
       <%= link_to 'add a bookmark 🔖', new_list_bookmark_path(@list), class: "btn btn-sm btn-outline-dark" %>
-      <%= link_to 'delete this list ❌', list_path(@list), method: :delete,
-          data: { confirm: "Delete '#{@list.name}' movie list? Its bookmarks will be deleted too 😧" }, class: "btn btn-sm btn-outline-danger"
+      <%= link_to 'delete this list ❌', list_path(@list), method: :delete, class: "btn btn-sm btn-outline-danger",
+          data: { confirm: "Delete '#{@list.name}' movie list? Its bookmark(s) will be deleted too 😧" }
       %>
     </div>
   </div>
 
   <div class="row">
     <% @list.bookmarks.each do |b| %>
-      <div class="col-12 col-sm-6 col-md-4 mb-4">
+      <div class="col-12 col-sm-6 col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1500">
         <div class="bg-white rounded shadow h-100">
           <%= image_tag b.movie.poster_url, alt: b.movie.title, class: "rounded-top movie-img" %>
           <div class="d-flex rounded-bottom flex-column p-3">
-            <strong><%= b.movie.title %> <span><%= b.movie.rating %></span></strong>
-            <small class="text-muted"><%= b.movie.overview %></small>
-            <div class="d-flex align-items-end justify-content-between">
-              <%= b.comment %>
+            <strong><%= b.movie.title %> | <span class="font-weight-light"><%= b.movie.rating %></span> <i class="fa-regular fa-star"></i></strong>
+            <small class="text-muted mb-1"><%= b.movie.overview %></small>
+            <div class="d-flex align-items-end justify-content-between p-2">
+              <div>
+                <i class="fa-solid fa-tags"></i><small class="flex-grow-1"></i> <%= b.comment %></small>
+              </div>
+              <small class="text-right">
+                <%= link_to "delete", bookmark_path(b), method: :delete, class: "text-danger",
+                data: { confirm: "Delete bookmark? ❌" } %>
+              </small>
             </div>
-            <%= link_to "delete", bookmark_path(b), method: :delete, data: { confirm: "Delete bookmark? ❌" } %>
           </div>
         </div>
       </div>
