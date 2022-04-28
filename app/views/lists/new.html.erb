@@ -2,7 +2,7 @@
   <div class="bg-white rounded shadow p-3">
     <%= simple_form_for @list do |f| %>
       <%= f.input :name, placeholder: 'E.g. Drama' %>
-      <%= f.input :photo %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit 'Create a new list', class: 'btn btn-outline-dark' %>
     <% end %>
   </div>
