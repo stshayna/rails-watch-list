@@ -20,7 +20,7 @@
     <% @list.bookmarks.each do |b| %>
       <div class="col-12 col-sm-6 col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1500">
         <div class="bg-white rounded shadow h-100">
-          <%# <%= image_tag b.movie.poster_url, alt: b.movie.title, class: "movie-img" %> %>
+          <%= image_tag b.movie.poster_url, alt: b.movie.title, class: "movie-img" %>
           <div class="d-flex rounded-bottom flex-column p-3">
             <strong><%= b.movie.title %> | <span class="font-weight-light"><%= b.movie.rating %></span> <i class="fa-regular fa-star"></i></strong>
             <small class="text-muted mb-1"><%= b.movie.overview %></small>
