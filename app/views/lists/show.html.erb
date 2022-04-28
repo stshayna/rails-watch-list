@@ -1,6 +1,8 @@
 
 <div>
-  <div class="cards list-bg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@list.photo.key) %>)">
+  <div class="cards list-bg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+  url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('popcorn.jpeg') %>)"
+  >
     <h1 class="text-lowercase"><%= @list.name %></h1>
   </div>
 </div>
