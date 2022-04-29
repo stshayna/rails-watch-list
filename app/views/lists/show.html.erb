@@ -25,10 +25,10 @@
           <%= image_tag b.movie.poster_url, alt: b.movie.title, class: "movie-img" %>
           <div class="d-flex rounded-bottom flex-column p-3">
             <strong><%= b.movie.title %> | <span class="font-weight-light"><%= b.movie.rating %></span> <i class="fa-regular fa-star"></i></strong>
-            <small class="text-muted m-1"><%= b.movie.overview %></small>
+            <small class="text-muted my-1"><%= b.movie.overview %></small>
             <div class="d-flex align-items-end justify-content-between p-2">
               <div>
-                <i class="fa-solid fa-tags"></i><small class="flex-grow-1"></i> <%= b.comment %></small>
+                <i class="fa-solid fa-tags me-2"></i><small class="flex-grow-1"></i> <%= b.comment %></small>
               </div>
               <small class="text-right">
                 <%= link_to "delete", bookmark_path(b), method: :delete, class: "text-danger",
