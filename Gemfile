@@ -56,6 +56,5 @@ gem "simple_form", github: "heartcombo/simple_form"
 
 # secret api key security
 gem 'dotenv-rails', require: 'dotenv/rails-now'
-
 # uploading / storing to heroku
 gem 'cloudinary', '~> 1.16.0'
